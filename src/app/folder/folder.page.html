@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>BEM VINDO</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form >
+    <ion-card>
+      <ion-img src="https://logo.criativoon.com/wp-content/uploads/2016/07/logotipo-de-barbearia.png"></ion-img>
+    </ion-card>
+    
+    <ion-item>
+      <ion-label position="floating">ENTRAR</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+
+    <ion-list lines="full" >
+      <ion-item>
+        <ion-label position="stacked"> EMAIL </ion-label>
+        <ion-input required type="email" name="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked"> SENHA </ion-label>
+        <ion-input required type="password" name="senha"></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <div>
+      <ion-button expand="block" type="submit" color="danger" (click)="showAlert()">
+       ENTRAR
+      </ion-button>
+    </div>
+
+  </form>
+    <div style="display:flex;justify-content:center;align-items:center;">
+      <ion-row>
+        <ion-col>
+          <ion-router-link class="spacing" color="danger" href="/cadastro">Quero me cadastrar</ion-router-link>
+        </ion-col>
+     </ion-row>
+    </div>
+
+    <div style="display:flex;justify-content:center;align-items:center;">
+      <ion-row>
+        <ion-col>
+          <ion-router-link class="spacing" color="danger" href="/inicio">Entrar como visitante</ion-router-link>
+        </ion-col>
+      </ion-row>
+    </div>
+</ion-content>
