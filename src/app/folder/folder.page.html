@@ -15,20 +15,20 @@
     </ion-item>
 
       <ion-item>
-        <ion-label position="floating"> EMAIL </ion-label>
+        <ion-label position="floating" color="whithe"> EMAIL </ion-label>
         <ion-input required type="email" formControlName="email"></ion-input>
         <ng-container *ngFor="let erro of mensagens_validacao.email">
           <span
               *ngIf="formLogin.get('email').hasError(erro.tipo) &&  (formLogin.get('email').dirty || 
               formLogin.get('email').touched)"
-              class="msg-erro">
+              class="msg-erro" style="display:flex;justify-content:center;align-items:center;">
             {{erro.mensagem}}
            </span>
           </ng-container>
       </ion-item>
 
       <ion-item>
-        <ion-label position="floating"> SENHA </ion-label>
+        <ion-label position="floating" color="whithe"> SENHA </ion-label>
         <ion-input required type="password" formControlName="senha"></ion-input>
         <ng-container *ngFor="let erro of mensagens_validacao.senha">
           <span
@@ -52,7 +52,7 @@
     <div style="display:flex;justify-content:center;align-items:center;">
       <ion-row>
         <ion-col>
-          <ion-router-link class="spacing"  COLOR="whithe"  href="/cadastro">Quero me cadastrar</ion-router-link>
+          <ion-router-link class="spacing"  COLOR="whithe"  routerLink="/cadastro">Quero me cadastrar</ion-router-link>
         </ion-col>
      </ion-row>
     </div>
@@ -60,7 +60,7 @@
     <div style="display:flex;justify-content:center;align-items:center;">
       <ion-row>
         <ion-col>
-          <ion-router-link class="spacing" COLOR="whithe" href="/inicio">Entrar como visitante</ion-router-link>
+          <ion-router-link class="spacing" COLOR="whithe" routerLink="/inicio">Entrar como visitante</ion-router-link>
         </ion-col>
       </ion-row>
     </div>

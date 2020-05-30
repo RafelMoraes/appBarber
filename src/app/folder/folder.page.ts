@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AlertController } from '@ionic/angular';
 import { AgendamentoPageRoutingModule } from '../agendamento/agendamento-routing.module';
 import { Router } from '@angular/router';
+import { UsuarioService } from '../services/usuario.service';
 
 
 @Component({
@@ -36,6 +37,8 @@ export class FolderPage implements OnInit {
     public formBuilder: FormBuilder,
     public alertController: AlertController,
     public router: Router,
+    public usuarioService: UsuarioService
+
  
     ) { 
 
@@ -49,23 +52,22 @@ export class FolderPage implements OnInit {
 
     public async login(){
       if(this.formLogin.valid){
-
-      let email = this.formLogin.value.email;
-      let senha = this.formLogin.value.senha;
-
-      if( email == "admin@admin.com" && senha == "123456"){
-        this.router.navigateByUrl('inicio');
-      }else{
-        this.alertUserInvalid();
-      }
-
-
-
+  
+        let email = this.formLogin.value.email;
+        let senha = this.formLogin.value.senha;
+  
+        if(await this.usuarioService.login(email, senha)){
+          this.router.navigateByUrl('inicio');
+        }else{
+          this.alertUserInvalid();
+        }
+  
       }else{
         this.alertFormInvalid();
       }
   
     }
+  
 
     async alertFormInvalid(){
       const alert = await this.alertController.create({
