@@ -30,6 +30,10 @@ const routes: Routes = [
   {
     path: 'contato',
     loadChildren: () => import('./contato/contato.module').then( m => m.ContatoPageModule)
+  },
+  {
+    path: 'edit-perfil',
+    loadChildren: () => import('./edit-perfil/edit-perfil.module').then( m => m.EditPerfilPageModule)
   }
 ];
 
