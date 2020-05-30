@@ -5,32 +5,48 @@
 </ion-header>
 
 <ion-content>
-  <form >
+  <form [formGroup]="formLogin" (ngSubmit)="login()">
     <ion-card>
-      <ion-img src="https://logo.criativoon.com/wp-content/uploads/2016/07/logotipo-de-barbearia.png"></ion-img>
+      <ion-img src="\assets\icon\logo.png"></ion-img>
     </ion-card>
     
     <ion-item >
       <ion-label style="display:flex;justify-content:center;align-items:center;">LOGIN</ion-label>
     </ion-item>
 
-    <ion-list lines="full" >
       <ion-item>
         <ion-label position="floating"> EMAIL </ion-label>
-        <ion-input required type="email" name="email"></ion-input>
+        <ion-input required type="email" formControlName="email"></ion-input>
+        <ng-container *ngFor="let erro of mensagens_validacao.email">
+          <span
+              *ngIf="formLogin.get('email').hasError(erro.tipo) &&  (formLogin.get('email').dirty || 
+              formLogin.get('email').touched)"
+              class="msg-erro">
+            {{erro.mensagem}}
+           </span>
+          </ng-container>
       </ion-item>
 
       <ion-item>
         <ion-label position="floating"> SENHA </ion-label>
-        <ion-input required type="password" name="senha"></ion-input>
+        <ion-input required type="password" formControlName="senha"></ion-input>
+        <ng-container *ngFor="let erro of mensagens_validacao.senha">
+          <span
+              *ngIf="formLogin.get('senha').hasError(erro.tipo) &&  (formLogin.get('senha').dirty || 
+              formLogin.get('senha').touched)"
+              class="msg-erro">
+            {{erro.mensagem}}
+           </span>
+          </ng-container>
       </ion-item>
-    </ion-list>
+   
+      <br>
 
-    <div>
-      <ion-button expand="block" type="submit" color="danger" (click)="showAlert()">
-       ENTRAR
-      </ion-button>
-    </div>
+      <div>
+        <ion-button expand="block" type="submit" color="danger">
+        ENTRAR
+        </ion-button>
+      </div>
 
   </form>
     <div style="display:flex;justify-content:center;align-items:center;">
