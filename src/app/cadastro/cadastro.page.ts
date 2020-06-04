@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 // Importações necessárias para formulários
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-// Faz a validação de CPF
 // Compara duas strings e retorna se são iguais.
 import { ComparaValidator } from '../validators/compara-validator';
 
