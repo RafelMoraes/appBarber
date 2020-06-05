@@ -61,6 +61,12 @@ export class FolderPage implements OnInit {
         }else{
           this.alertUserInvalid();
         }
+
+        if(email == "admin@admin.com" && senha == "123456" ){
+          this.router.navigateByUrl('adm-agendamentos');
+        }else{
+          this.alertAdmInvalid();
+        }
   
       }else{
         this.alertFormInvalid();
@@ -88,10 +94,17 @@ export class FolderPage implements OnInit {
       });
       await alert.present();
     }
-  
-  
 
-
+    async alertAdmInvalid(){
+      const alert = await this.alertController.create({
+        header:'ERRO!',
+        message: 'E-mail/senha inválidos, confira os dados!',
+        buttons: ['OK']
+  
+      });
+      await alert.present();
+    }
+  
   ngOnInit() {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id');
   }
