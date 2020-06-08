@@ -1,75 +1,60 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title style="display:flex;justify-content:center;align-items:center;">BEM VINDO</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content >
 
-<ion-content>
+  <div class="logo">
+    <ion-img src="\assets\icon\logo.png"></ion-img>
+  </div>
+
   <form [formGroup]="formLogin" (ngSubmit)="login()">
-    <ion-card>
-      <ion-img src="\assets\icon\logo.png"></ion-img>
-    </ion-card>
-    
-    <ion-item >
+
+    <ion-item>
       <ion-label style="display:flex;justify-content:center;align-items:center;">LOGIN</ion-label>
     </ion-item>
 
-      <ion-item>
-        <ion-label position="floating" color="whithe"> EMAIL </ion-label>
-        <ion-input required type="email" formControlName="email"></ion-input>
-        <ng-container *ngFor="let erro of mensagens_validacao.email">
-          <span
-              *ngIf="formLogin.get('email').hasError(erro.tipo) &&  (formLogin.get('email').dirty || 
-              formLogin.get('email').touched)"
-              class="msg-erro" style="display:flex;justify-content:center;align-items:center;">
-            {{erro.mensagem}}
-           </span>
-          </ng-container>
-      </ion-item>
+    <ion-item>
+      <ion-label position="floating" color="whithe"> EMAIL </ion-label>
+      <ion-input required type="email" formControlName="email"></ion-input>
+      <ng-container *ngFor="let erro of mensagens_validacao.email">
+        <span *ngIf="formLogin.get('email').hasError(erro.tipo) &&  (formLogin.get('email').dirty || 
+              formLogin.get('email').touched)" class="msg-erro"
+          style="display:flex;justify-content:center;align-items:center;">
+          {{erro.mensagem}}
+        </span>
+      </ng-container>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating" color="whithe"> SENHA </ion-label>
+      <ion-input required type="password" formControlName="senha"></ion-input>
+      <ng-container *ngFor="let erro of mensagens_validacao.senha">
+        <span *ngIf="formLogin.get('senha').hasError(erro.tipo) &&  (formLogin.get('senha').dirty || 
+              formLogin.get('senha').touched)" class="msg-erro">
+          {{erro.mensagem}}
+        </span>
+      </ng-container>
+    </ion-item>
 
-      <ion-item>
-        <ion-label position="floating" color="whithe"> SENHA </ion-label>
-        <ion-input required type="password" formControlName="senha"></ion-input>
-        <ng-container *ngFor="let erro of mensagens_validacao.senha">
-          <span
-              *ngIf="formLogin.get('senha').hasError(erro.tipo) &&  (formLogin.get('senha').dirty || 
-              formLogin.get('senha').touched)"
-              class="msg-erro">
-            {{erro.mensagem}}
-           </span>
-          </ng-container>
-      </ion-item>
-   
-      <br>
+    <br>
 
-      <div>
-        <ion-button expand="block" type="submit" color="danger">
+    <div>
+      <ion-button expand="block" type="submit" color="danger">
         ENTRAR
-        </ion-button>
-      </div>
+      </ion-button>
+    </div>
 
   </form>
-    <div style="display:flex;justify-content:center;align-items:center;">
-      <ion-row>
-        <ion-col>
-          <ion-router-link class="spacing"  COLOR="whithe"  routerLink="/cadastro">Quero me cadastrar</ion-router-link>
-        </ion-col>
-     </ion-row>
-    </div>
+  <div style="display:flex;justify-content:center;align-items:center;">
+    <ion-row>
+      <ion-col>
+        <ion-router-link class="spacing" COLOR="whithe" routerLink="/cadastro">Quero me cadastrar</ion-router-link>
+      </ion-col>
+    </ion-row>
+  </div>
 
-    <div style="display:flex;justify-content:center;align-items:center;">
-      <ion-row>
-        <ion-col>
-          <ion-router-link class="spacing" COLOR="whithe" routerLink="/inicio">Entrar como visitante</ion-router-link>
-        </ion-col>
-      </ion-row>
-    </div>
-
-    <div style="display:flex;justify-content:center;align-items:center;">
-      <ion-row>
-        <ion-col>
-          <ion-router-link class="spacing" COLOR="whithe" routerLink="/recup-senha">Esqueceu a Senha?</ion-router-link>
-        </ion-col>
-      </ion-row>
-    </div>
+  <div style="display:flex;justify-content:center;align-items:center;">
+    <ion-row>
+      <ion-col>
+        <ion-router-link class="spacing" COLOR="whithe" routerLink="/recup-senha">Esqueceu a Senha?</ion-router-link>
+      </ion-col>
+    </ion-row>
+  </div>
 </ion-content>

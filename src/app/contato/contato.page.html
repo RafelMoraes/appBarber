@@ -9,48 +9,104 @@
 
 <ion-content>
 
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>BARBEARIA VALTENIS</ion-card-title>
-      <ion-card-subtitle></ion-card-subtitle>
-    </ion-card-header>
-    <ion-card-content>
-      <p>Horário de funcionamento:</p>
-      <p>Segunda a Sabádo</p>
-      <p>Das 08:00 as 11:00 & 13:00 as 19:00</p>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-item-sliding>
-    <ion-item >
-
-      <ion-label>
-         <div>
-            <h2>Endereço</h2>
-            <h3>Rua João Morelato, 621</h3>
-            <h3>Sonho Nosso V</h3>
-            <h3>Barra Bonita-SP</h3>
-            <h3>CEP 17340-000</h3>
-         </div>
-      </ion-label>
-
-      <ion-thumbnail slot="start">
-        <img src="https://scontent.fbau3-1.fna.fbcdn.net/v/t1.0-9/17457264_1278559098899775_1903789968388111037_n.jpg?_nc_cat=103&_nc_sid=8bfeb9&_nc_ohc=lM1JrqPwv-sAX8EGrOq&_nc_ht=scontent.fbau3-1.fna&oh=66b7648dd67e1671b5a79915bb9de8dc&oe=5EF5F824">
-      </ion-thumbnail>
-    </ion-item>
-  </ion-item-sliding>
-
   <div>
-    <div class="service-icon">
-      <img src="\assets\icon\wp512.png">
+
+    <div style="display:flex;justify-content:center;align-items:center;">
+      <ion-label>
+        <h1>Barbearia Valtenis</h1>
+      </ion-label>
+    </div>
+    <br>
+    <div class="margin">
+      <ion-item>
+        <ion-label>
+          <h3>Horário de Funcionamento:</h3>
+          <h3>Segunda a Sabádo</h3>
+          <h3>08:00 - 11:00 & 13:00 - 19:00</h3>
+        </ion-label>
+      </ion-item>
     </div>
 
-    <div class="service-icon">
-      <img src="\assets\icon\fb512.png">
+    <br>
+
+    <div style="display:flex;justify-content:center;align-items:center;">
+      <ion-label>
+        <h1>Endereço</h1>
+      </ion-label>
+    </div>
+    <br>
+
+    <div class="margin">
+      <ion-item>
+        <ion-label>
+          <h3>Rua João Morelato, 621</h3>
+          <h3>Sonho Noss V</h3>
+          <h3>Barra Bonita - SP</h3>
+          <h3>CEP: 17340-000</h3>
+        </ion-label>
+
+        <ion-thumbnail slot="start">
+          <img src="/assets/icon/faixada.jpg">
+        </ion-thumbnail>
+      </ion-item>
     </div>
 
-    <div class="service-icon">
-      <img src="\assets\icon\tf512.png">
+    <br>
+
+    <div class="tamfont2">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <div class="service-iconWP">
+              <img src="\assets\icon\wp512.png">
+            </div>
+            (14) 99630-2435
+          </ion-col>
+
+          <ion-col>
+            <div class="service-iconFB">
+              <img src="\assets\icon\fb512.png">
+            </div>
+            <div class="tamfontFB">
+              Valtenis Barbearia
+            </div>
+          </ion-col>
+
+          <ion-col>
+            <div class="service-iconTF">
+              <img src="\assets\icon\tf512.png">
+            </div>
+            (14) 3642-5082
+          </ion-col>
+
+        </ion-row>
+      </ion-grid>
     </div>
+
   </div>
+
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <div>
+      <div class="service-icon2">
+        <img src="\assets\icon\logoMC.png">
+      </div>
+
+      <div class="service-icon2">
+        <img src="\assets\icon\logoVS.png">
+      </div>
+
+      <div class="service-icon2">
+        <img src="\assets\icon\logoDN.png">
+      </div>
+
+    </div>
+
+    <ion-label class="tamfont" style="display:flex;justify-content:center;align-items:center;">
+      Aceitamos todos os cartões
+    </ion-label>
+
+  </ion-toolbar>
+</ion-footer>

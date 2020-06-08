@@ -1,21 +1,55 @@
-.service-icon{
+.margin{
+    margin-left: 20px;
+    margin-right: 20px;
+};
+.service-iconWP{
     display: inline-block;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border-radius: 200%;
     background: transparent;
     line-height: 100px;
     position: relative;
-    margin-left: 35px;
+    margin-left: 25px;
 };
-
-.service-text{
+.service-iconFB{
     display: inline-block;
-    width: 5px;
-    height: 5px;
+    width: 60px;
+    height: 60px;
     border-radius: 200%;
     background: transparent;
     line-height: 100px;
     position: relative;
-    margin-left: 10px;
+    margin-left: 25px;
 };
+.service-iconTF{
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    border-radius: 200%;
+    background: transparent;
+    line-height: 100px;
+    position: relative;
+    margin-left: 25px;
+};
+.service-icon2{
+    display: inline-block;
+    width: 55px;
+    height: 45px;
+    border-radius: 200%;
+    background: transparent;
+    line-height: 100px;
+    position: relative;
+    margin-left: 40px;
+    margin-right: 10px;
+};
+.tamfont{
+    font-size: 15px;
+};
+.tamfont2{
+    font-size: 13px;
+};
+.tamfontFB{
+    margin-left: 27px;
+    font-size: 13px;
+}

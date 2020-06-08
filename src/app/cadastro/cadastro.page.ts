@@ -27,18 +27,21 @@ export class CadastroPage implements OnInit {
       { tipo: 'required', mensagem: 'O campo Nome é obrigatório.' },
       { tipo: 'minlength', mensagem: 'O nome deve ter pelo menos 3 caracteres.' },
     ],
-    sexo: [
-      { tipo: 'required', mensagem: 'O campo Sexo é obrigatório.' },
+    telefone: [
+      { tipo: 'required', mensagem: 'O campo telefone é obrigatório.' },
     ],
-    cpf: [
-      { tipo: 'required', mensagem: 'O campo CPF é obrigatório.' },
+    endereco: [
+      { tipo: 'required', mensagem: 'O campo endereço é obrigatório.' },
+    ],
+    bairro: [
+      { tipo: 'required', mensagem: 'O campo bairro é obrigatório.' },
+    ],
+    cidade: [
+      { tipo: 'required', mensagem: 'O campo cidade é obrigatório.' },
     ],
     email: [
       { tipo: 'required', mensagem: 'O campo E-mail é obrigatório.' },
       { tipo: 'email', mensagem: 'E-mail Inválido.' },
-    ],
-    dataNascimento: [
-      { tipo: 'required', mensagem: 'O campo Data de Nascimento é obrigatório.' },
     ],
     senha: [
       { tipo: 'required', mensagem: 'É obrigatório confirmar senha.' },
@@ -63,9 +66,10 @@ export class CadastroPage implements OnInit {
     this.formCadastro = formBuilder.group({
       // Declara os campos do formulário.
       nome: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
-      cpf: ['', Validators.compose([Validators.required,])],
-      sexo: ['', Validators.compose([Validators.required])],
-      dataNascimento: ['', Validators.compose([Validators.required])],
+      telefone: ['', Validators.compose([Validators.required,])],
+      endereco: ['', Validators.compose([Validators.required])],
+      bairro: ['', Validators.compose([Validators.required])],
+      cidade: ['', Validators.compose([Validators.required])],
       email: ['', Validators.compose([Validators.required, Validators.email])],
       senha: ['', Validators.compose([Validators.minLength(6), Validators.maxLength(8), Validators.required])],
       confirmaSenha: ['', Validators.compose([Validators.minLength(6), Validators.maxLength(8), Validators.required])]
@@ -85,7 +89,7 @@ export class CadastroPage implements OnInit {
 
       if (await this.usuarioService.salvar(this.usuario)) {
         this.alertCadastro('SUCESSO!!!', 'Usuário salvo com sucesso!!!');
-        this.router.navigateByUrl('/home');
+        this.router.navigateByUrl('/folder/folder');
       } else {
         this.alertCadastro('ERRO!!!', 'Erro ao salvar o usuário!!!');
       }

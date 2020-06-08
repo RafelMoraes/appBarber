@@ -28,10 +28,6 @@ const routes: Routes = [
     loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
   },
   {
-    path: 'contato',
-    loadChildren: () => import('./contato/contato.module').then( m => m.ContatoPageModule)
-  },
-  {
     path: 'edit-perfil',
     loadChildren: () => import('./edit-perfil/edit-perfil.module').then( m => m.EditPerfilPageModule)
   },
@@ -46,6 +42,10 @@ const routes: Routes = [
   {
     path: 'recup-senha',
     loadChildren: () => import('./recup-senha/recup-senha.module').then( m => m.RecupSenhaPageModule)
+  },
+  {
+    path: 'contato',
+    loadChildren: () => import('./contato/contato.module').then( m => m.ContatoPageModule)
   }
 ];
 
