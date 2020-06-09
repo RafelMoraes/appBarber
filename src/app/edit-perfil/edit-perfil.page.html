@@ -1,14 +1,19 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+      <ion-back-button defaultHref="/perfil"></ion-back-button>
     </ion-buttons>
     <ion-title>Editar Perfil</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
-
+  <div>
+    <div class="img-perf">
+      <img src="/assets/icon/perfil.jpeg">
+    </div>
+    <ion-button class="bEdit" color="danger" (click)="chooseFile()">Procurar foto</ion-button>
+    <ion-button class="bEdit" color="danger" href="#">Salvar Foto</ion-button>
+  </div>
 
 </ion-content>

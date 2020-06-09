@@ -12,6 +12,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { IonicStorageModule } from '@ionic/storage';
 import { UsuarioService } from './services/usuario.service';
 
+import { FileChooser } from '@ionic-native/file-chooser/ngx';
+import { FileOpener, } from "@ionic-native/file-opener/ngx";
+import { FilePath } from "@ionic-native/file-path/ngx";
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -28,8 +32,12 @@ import { UsuarioService } from './services/usuario.service';
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    UsuarioService
+    UsuarioService,
+    FileChooser,
+    FileOpener,
+    FilePath
+
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
