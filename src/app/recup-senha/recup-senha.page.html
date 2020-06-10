@@ -1,9 +1,28 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>recupSenha</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/folder/folder"></ion-back-button>
+    </ion-buttons>
+    <ion-title></ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
+  <ion-card>
+    <ion-img src="\assets\icon\logo.png"></ion-img>
+    <ion-card-header>
+      <ion-card-title style="display:flex;justify-content:center;align-items:center;">RECUPERAR SENHA</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+  <div>
+    <ion-item class="borda">
+      <ion-label class="corText" position="floating" >
+        <h2>Digite seu telefone ou E-mail</h2>
+      </ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-button color="danger" class="bEdit">Enviar SMS</ion-button>
+    <ion-button color="danger" class="bEdit">Enviar E-mail</ion-button>
+  </div>
 </ion-content>

@@ -9,6 +9,7 @@ export class RecupSenhaPage implements OnInit {
 
   constructor() { }
 
+
   ngOnInit() {
   }
 
