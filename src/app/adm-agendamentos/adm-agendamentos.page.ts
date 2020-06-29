@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Agendamentos } from '../intefaces/agendamentos';
+import { AgendamentosService } from '../services/agendamentos.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-adm-agendamentos',
@@ -6,10 +9,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./adm-agendamentos.page.scss'],
 })
 export class AdmAgendamentosPage implements OnInit {
+  [x: string]: any;
 
-  constructor() { }
+  private agenda = new Array<Agendamentos>();
+  private agendaSubscription: Subscription;
 
-  ngOnInit() {
+
+  constructor(private aendaService: AgendamentosService) {
+    this.agendaSubscription = this.agendamentosService.getAgendados().subscribe(data => {
+      this.agenda = data;
+    });
   }
 
+  ngOnInit() { }
+
+  ngOnDestroy(){
+    this.agendaSubscription.unsubscribe();
+  }
 }

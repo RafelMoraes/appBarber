@@ -8,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AgendamentoPage implements OnInit {
 
-  constructor() { }
+
+  constructor() {
+
+  }
 
   ngOnInit() {
   }

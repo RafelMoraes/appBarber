@@ -10,8 +10,11 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { IonicStorageModule } from '@ionic/storage';
-import { UsuarioService } from './services/usuario.service';
 
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+import { AngularFireAuthModule } from "@angular/fire/auth";
+import { AngularFirestoreModule } from "@angular/fire/firestore";
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,13 +26,15 @@ import { UsuarioService } from './services/usuario.service';
     IonicStorageModule.forRoot({
       name: '__mydb',
       driverOrder: ['indexdb', 'sqlite', 'websql']
-    })
+    }),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFirestoreModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    UsuarioService,
 
   ],
   bootstrap: [AppComponent]

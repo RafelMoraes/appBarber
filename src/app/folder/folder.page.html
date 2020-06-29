@@ -1,10 +1,10 @@
-<ion-content >
+<ion-content class="swiper-no-swiping">
 
-  <div class="logo">
+  <ion-card class="topo">
     <ion-img src="\assets\icon\logo.png"></ion-img>
-  </div>
+  </ion-card>
+  <ion-card>
 
-  <form [formGroup]="formLogin" (ngSubmit)="login()">
 
     <ion-item>
       <ion-label style="display:flex;justify-content:center;align-items:center;">LOGIN</ion-label>
@@ -12,36 +12,23 @@
 
     <ion-item>
       <ion-label position="floating" color="whithe"> EMAIL </ion-label>
-      <ion-input required type="email" formControlName="email"></ion-input>
-      <ng-container *ngFor="let erro of mensagens_validacao.email">
-        <span *ngIf="formLogin.get('email').hasError(erro.tipo) &&  (formLogin.get('email').dirty || 
-              formLogin.get('email').touched)" class="msg-erro"
-          style="display:flex;justify-content:center;align-items:center;">
-          {{erro.mensagem}}
-        </span>
-      </ng-container>
+      <ion-input type="email" [(ngModel)]="userLogin.email" name="email"></ion-input>
+
     </ion-item>
-    
+
     <ion-item>
       <ion-label position="floating" color="whithe"> SENHA </ion-label>
-      <ion-input required type="password" formControlName="senha"></ion-input>
-      <ng-container *ngFor="let erro of mensagens_validacao.senha">
-        <span *ngIf="formLogin.get('senha').hasError(erro.tipo) &&  (formLogin.get('senha').dirty || 
-              formLogin.get('senha').touched)" class="msg-erro">
-          {{erro.mensagem}}
-        </span>
-      </ng-container>
+      <ion-input type="password" [(ngModel)]="userLogin.senha" name="senha"></ion-input>
     </ion-item>
 
     <br>
 
     <div>
-      <ion-button expand="block" type="submit" color="danger">
+      <ion-button expand="block" type="submit" color="danger" (click)="login()">
         ENTRAR
       </ion-button>
     </div>
-
-  </form>
+  </ion-card>
   <div style="display:flex;justify-content:center;align-items:center;">
     <ion-row>
       <ion-col>
