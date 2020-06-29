@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { IonicStorageModule } from '@ionic/storage';
 import { UsuarioService } from './services/usuario.service';
 
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -21,7 +22,7 @@ import { UsuarioService } from './services/usuario.service';
     AppRoutingModule,
     IonicStorageModule.forRoot({
       name: '__mydb',
-      driverOrder: ['indexeddb', 'sqlite', 'websql']
+      driverOrder: ['indexdb', 'sqlite', 'websql']
     })
   ],
   providers: [

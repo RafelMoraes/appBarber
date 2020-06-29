@@ -9,6 +9,10 @@
 
 <ion-content>
 
+  <ion-card>
+    <ion-img src="\assets\icon\logo.png"></ion-img>
+  </ion-card>
+
   <ion-item>
     <ion-label>Selecione a data: </ion-label>
     <ion-datetime monthValues="1,2,3,4,5,6,7,8,9,10,11,12" yearValues="2020,2021" displayFormat="DD/MM/YY">
@@ -26,7 +30,7 @@
 
   <ion-item>
     <ion-label>Profisisonal:</ion-label>
-    <ion-select value="">
+    <ion-select interface="popover">
       <ion-select-option value="1">ValTenis</ion-select-option>
       <ion-select-option value="2">Pafuncio</ion-select-option>
     </ion-select>
@@ -50,7 +54,7 @@
   <br>
 
   <ion-item>
-    <ion-label positin="stacked">Observação:
+    <ion-label position="floating">Observação:
     </ion-label>
     <ion-input type="text"></ion-input>
   </ion-item>

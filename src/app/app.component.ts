@@ -18,11 +18,6 @@ export class AppComponent implements OnInit {
       icon: 'home'
     },
     {
-      title: 'Cadastro',
-      url: '/cadastro',
-      icon: 'create'
-    },
-    {
       title: 'Agendamento',
       url: '/agendamento',
       icon: 'calendar'

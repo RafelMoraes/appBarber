@@ -8,18 +8,18 @@ import { Usuario } from '../models/Usuario';
 })
 export class UsuarioService {
 
-  constructor(private storage: Storage) { 
+  constructor(private storage: Storage) {
 
   }
 
   /**
    * salvar
    */
-  public async salvar(usuario: Usuario){
-    if(usuario.email){
+  public async salvar(usuario: Usuario) {
+    if (usuario.email) {
       await this.storage.set(usuario.email, usuario);
       return true;
-    }else{
+    } else {
       return false;
     }
   }
@@ -42,7 +42,7 @@ export class UsuarioService {
     }).then(() => {
       return usuarios;
     }).catch(() => {
-      usuarios =[];
+      usuarios = [];
     });
   }
 
@@ -57,12 +57,12 @@ export class UsuarioService {
    * login
    */
 
-  public async login(email: string, senha: string){
+  public async login(email: string, senha: string) {
     let usuario: Usuario;
     await this.storage.get(email).then(valor => {
       if (valor && valor.senha == senha) {
         usuario = valor;
-      }else {
+      } else {
         usuario = null;
       }
     });
