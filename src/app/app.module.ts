@@ -16,6 +16,7 @@ import { environment } from 'src/environments/environment';
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFirestoreModule } from "@angular/fire/firestore";
 
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -30,6 +31,7 @@ import { AngularFirestoreModule } from "@angular/fire/firestore";
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule
+
   ],
   providers: [
     StatusBar,

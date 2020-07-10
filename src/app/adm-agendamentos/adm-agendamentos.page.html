@@ -1,63 +1,66 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Agendados</ion-title>
+    <ion-title>Adm Agendados</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-list *ngIf="!agendamentos.length">
-    <ion-item *ngFor="let item of [0, 1, 2]">
-      <ion-avatar slot="start">
-        <ion-skeleton-text animated></ion-skeleton-text>
-      </ion-avatar>
-      <ion-label>
-        <h3>
-          <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
-        </h3>
-        <p>
-          <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
-        </p>
-        <p>
-          <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
-        </p>
-      </ion-label>
+
+  <ion-card>
+    <ion-img src="\assets\icon\logo.png"></ion-img>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+        <ion-card-title class="fonte" style="display:flex;justify-content:center;align-items:center;"> 
+          Agendamentos a serem confirmados
+        </ion-card-title>  
+    </ion-card-header>
+  
+    <ion-tem></ion-tem>
+
+    <div class="baixar">
+    <ion-item>
+      <div >
+        <input class="caixas" type="name" id="name1" name="name1">
+        <input class="caixas" type="time" id="hora1" name="hora1">
+        <input class="caixas" type="date" id="data1" name="data1">
+        <ion-button class="boton" type="submit" color="secondary">Vizualizar</ion-button>
+      </div>
     </ion-item>
-  </ion-list>
 
-  <ion-list>
-    <ion-item-sliding *ngFor="let agendados of agendamentos">
-        <ion-avatar slot="start">
-        </ion-avatar>
+    <ion-item>
+      
+      <div >
+        <input class="caixas" type="name" id="name2" name="name2">
+        <input class="caixas" type="time" id="hora2" name="hora2">
+        <input class="caixas" type="date" id="data2" name="data2">
+        <ion-button class="boton" type="submit" color="secondary">Vizualizar</ion-button>
+      </div>
+    </ion-item>
 
-        <ion-label>
-          {{ agendamentos.nome }}
-          <p>{{ agendamentos.tipoCorte }}</p>
-          <p>{{ agendamentos.data}}</p>
-          <p>{{ agendamentos.hora}}</p>
-          <p>{{ agendamentos.profissional}}</p>
-        </ion-label>
-      </ion-item>
+    <ion-item>
+      
+      <div >
+        <input class="caixas" type="name" id="name3" name="name3">
+        <input class="caixas" type="time" id="hora3" name="hora3">
+        <input class="caixas" type="date" id="data3" name="data3">
+        <ion-button class="boton" type="submit" color="secondary">Vizualizar</ion-button>
+      </div>
+    </ion-item>
 
-    </ion-item-sliding>
-  </ion-list>
+    <ion-item>
+      <div >
+        <input class="caixas" type="name" id="name4" name="name4">
+        <input class="caixas" type="time" id="hora4" name="hora4">
+        <input class="caixas" type="date" id="data4" name="data4">
+        <ion-button class="boton" type="submit" color="secondary">Vizualizar</ion-button>
+      </div>
+    </ion-item>
+    </div>
+    
+  </ion-card>
+
+  
+
 </ion-content>
-
-<ion-footer>
-  <ion-toolbar>
-    <ion-grid>
-      <ion-row>
-        <ion-col size="6">
-          <ion-button (click)="logout()" color="danger" expand="block">
-            Sair
-          </ion-button>
-        </ion-col>
-
-        <ion-col size="6">
-          <ion-button routerLink="/adm-confirm-agendam" expand="block">
-           Confirmar
-          </ion-button>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-toolbar>
-</ion-footer>

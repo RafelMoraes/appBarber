@@ -1,9 +1,54 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>admConfirmAgendam</ion-title>
+    <ion-title>Confirmar Horários</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-card>
+    <ion-img src="\assets\icon\logo.png"></ion-img>
+  </ion-card>
+
+  <ion-item>
+    <ion-label position="floating">Nome</ion-label>
+    <ion-input type="name"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Selecione a data: </ion-label>
+    <ion-datetime monthValues="1,2,3,4,5,6,7,8,9,10,11,12" yearValues="2020,2021" displayFormat="DD/MM/YY">
+    </ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Selecione a hora: </ion-label>
+    <ion-datetime display-format="HH:mm" picker-format="HH:mm" value="1990-02-19T07:43Z"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Tipo De Corte: </ion-label>
+    <ion-select interface="popover">
+      <ion-select-option value="CS">Corte silmples</ion-select-option>
+      <ion-select-option value="CN">Corte c/ Navalha</ion-select-option>
+      <ion-select-option value="CB">Corte + Barba</ion-select-option>
+      <ion-select-option value="CNB">Corte c/ Navalha + Barba </ion-select-option>
+      <ion-select-option value="P">Platinado</ion-select-option>
+      <ion-select-option value="L">Luzes</ion-select-option>
+      <ion-select-option value="P">Progressiva</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Celular</ion-label>
+    <ion-input type="name" ></ion-input>
+  </ion-item>
+
+  <ion-item></ion-item>
+
+  <div style="display:flex;justify-content:center;align-items:center;">
+    <ion-button class="tamanho" color="tertiary" href="#">Voltar</ion-button>
+    <ion-button class="tamanho" color="danger" href="#">Excluir</ion-button>
+    <ion-button class="tamanho" color="success" href="#">Confirmar</ion-button>
+  </div>
 
 </ion-content>

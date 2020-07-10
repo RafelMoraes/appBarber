@@ -35,7 +35,7 @@ export class AppComponent implements OnInit {
     },
     {
       title: 'Sair',
-      url: 'logout()',
+      url: '/folder/folder',
       icon: 'exit'
     }
   ];
