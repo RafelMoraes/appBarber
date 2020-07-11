@@ -32,11 +32,6 @@ export class AppComponent implements OnInit {
       title: 'Contato',
       url: '/contato',
       icon: 'call'
-    },
-    {
-      title: 'Sair',
-      url: '/folder/folder',
-      icon: 'exit'
     }
   ];
 

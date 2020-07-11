@@ -43,6 +43,9 @@ export class FolderPage implements OnInit {
 
     if (email == "admin@admin.com" && senha == "123456") {
       this.router.navigateByUrl('adm-agendamentos');
+    } else{
+
+      
     }
 
     await this.presentLoading();

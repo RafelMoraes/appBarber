@@ -3,6 +3,11 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">
+        <ion-icon name="exit-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
     <ion-title>Inicio</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -13,9 +18,9 @@
   </ion-card>
 
   <ion-item-sliding>
-    <ion-item >
+    <ion-item>
       <ion-label>
-        <div> 
+        <div>
           <h2>Corte silmples</h2>
           <ion-badge color="danger">R$ 20,00</ion-badge>
         </div>
@@ -27,7 +32,7 @@
   </ion-item-sliding>
 
   <ion-item-sliding>
-    <ion-item >
+    <ion-item>
       <ion-label>
         <div>
           <h2>Corte c/ Navalha</h2>
@@ -41,7 +46,7 @@
   </ion-item-sliding>
 
   <ion-item-sliding>
-    <ion-item >
+    <ion-item>
       <ion-label>
         <div>
           <h2>Corte + Barba</h2>
@@ -55,7 +60,7 @@
   </ion-item-sliding>
 
   <ion-item-sliding>
-    <ion-item >
+    <ion-item>
       <ion-label>
         <div>
           <h2>Corte c/ Navalha + Barba </h2>
@@ -83,7 +88,7 @@
   </ion-item-sliding>
 
   <ion-item-sliding>
-    <ion-item >
+    <ion-item>
       <ion-label>
         <div>
           <h2>Luzes</h2>
@@ -97,7 +102,7 @@
   </ion-item-sliding>
 
   <ion-item-sliding>
-    <ion-item >
+    <ion-item>
       <ion-label>
         <div>
           <h2>Progressiva</h2>
