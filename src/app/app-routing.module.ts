@@ -43,14 +43,8 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'adm-confirm-agendam',
-    loadChildren: () => import('./adm-confirm-agendam/adm-confirm-agendam.module').then( m => m.AdmConfirmAgendamPageModule),
-    canActivate: [AuthGuard]
-  },
-  {
     path: 'recup-senha',
-    loadChildren: () => import('./recup-senha/recup-senha.module').then( m => m.RecupSenhaPageModule),
-    canActivate: [AuthGuard]
+    loadChildren: () => import('./recup-senha/recup-senha.module').then( m => m.RecupSenhaPageModule)
   },
   {
     path: 'contato',

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Usuario } from '../intefaces/usuario';
+import { Admin } from '../intefaces/administrador';
 
 @Injectable({
   providedIn: 'root'
@@ -17,11 +18,15 @@ export class AuthService {
     return this.afa.createUserWithEmailAndPassword(user.email, user.senha);
   }
 
-  public logout() {
+  logout() {
     return this.afa.signOut();
   }
 
   getAuth() {
     return this.afa;
+  }
+
+  resetSenha(user: Usuario){
+    return this.afa.sendPasswordResetEmail(user.email);
   }
 }

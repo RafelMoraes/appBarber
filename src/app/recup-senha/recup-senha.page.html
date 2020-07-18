@@ -15,14 +15,19 @@
       <ion-card-title style="display:flex;justify-content:center;align-items:center;">RECUPERAR SENHA</ion-card-title>
     </ion-card-header>
   </ion-card>
-  <div>
-    <ion-item class="borda">
-      <ion-label class="corText" position="floating" >
-        <h2>Digite seu telefone ou E-mail</h2>
-      </ion-label>
-      <ion-input></ion-input>
-    </ion-item>
-    <ion-button color="danger" class="bEdit">Enviar SMS</ion-button>
-    <ion-button color="danger" class="bEdit">Enviar E-mail</ion-button>
-  </div>
-</ion-content>
+
+  <form #form="ngForm" (ngSubmit)="resetSenha(form)">
+    <ion-card>
+      <div>
+        <ion-item>
+          <ion-label class="corText" position="floating">
+            <h2>Digite seu E-mail</h2>
+          </ion-label>
+          <ion-input [(ngModel)]="user.email" name="email" type="email"></ion-input>
+        </ion-item>
+        <br>
+        <ion-button color="danger" expand="block" (click)="resetSenha(email)">Enviar E-mail</ion-button>
+      </div>
+    </ion-card>
+  </form>
+</ion-content> 

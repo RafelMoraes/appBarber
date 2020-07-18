@@ -1,43 +1,31 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-import { Agendamentos } from '../intefaces/agendamentos';
-import { map } from 'rxjs/operators';
+
+import { AngularFirestore } from '@angular/fire/firestore';
+
+import { Agendamento } from '../models/agendamento';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AgendamentosService {
 
-  private agendaCollection: AngularFirestoreCollection<Agendamentos>;
+  constructor(private afs: AngularFirestore) { }
 
-  constructor(private afs: AngularFirestore) {
 
-    this.agendaCollection = this.afs.collection<Agendamentos>('Agendados');
+  public create(agendamento: Agendamento) {
+    return this.afs.collection('agendamentos').add({ ...agendamento });
   }
 
-  getAgendados() {
-    return this.agendaCollection.snapshotChanges().pipe(
-      map(actions => {
-        return actions.map(a => {
-          const data = a.payload.doc.data();
-          const id = a.payload.doc.id;
+  public getAll() {
+    return this.afs.collection('agendamentos').snapshotChanges();
+  }
 
-          return { id, ...data };
-        });
-      })
-    );
+  public update(key: string, agendamento: Agendamento) {
+    return this.afs.doc(`agendamentos/${key}`).update(agendamento);
 
   }
 
-  addAgendados(Agendados: Agendamentos) {
-    return this.agendaCollection.add(Agendados);
-  }
-
-  getAgendado(id: string) {
-    return this.agendaCollection.doc<Agendamentos>(id).valueChanges();
-  }
-
-  deleteAgendado(id: string) {
-    return this.agendaCollection.doc(id).delete();
+  public delete(key: string){
+    return this.afs.doc(`agendamentos/${key}`).delete();
   }
 }

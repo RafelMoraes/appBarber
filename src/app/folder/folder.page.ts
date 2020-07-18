@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AlertController, LoadingController, ToastController } from '@ionic/angular';
-import { AgendamentoPageRoutingModule } from '../agendamento/agendamento-routing.module';
 import { Router } from '@angular/router';
 import { Usuario } from '../intefaces/usuario';
 import { AuthService } from '../services/auth.service';
@@ -37,16 +36,6 @@ export class FolderPage implements OnInit {
   }
 
   async login() {
-
-    let email = this.userLogin.email;
-    let senha = this.userLogin.senha;
-
-    if (email == "admin@admin.com" && senha == "123456") {
-      this.router.navigateByUrl('adm-agendamentos');
-    } else{
-
-      
-    }
 
     await this.presentLoading();
 
