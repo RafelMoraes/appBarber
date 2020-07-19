@@ -42,6 +42,7 @@ export class FolderPage implements OnInit {
     try {
       await this.authService.login(this.userLogin);
       this.router.navigate(['inicio']);
+      }
     } catch (error) {
 
       let message: string;

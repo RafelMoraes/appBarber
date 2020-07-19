@@ -35,11 +35,19 @@ export class AgendamentoPage implements OnInit {
     agendamento.tipoCorte = this.agenda.tipoCorte;
 
     await this.presentLoading();
-
-    try {
-      await this.agendamentoservice.create(this.agenda).then(resposta => {
-        console.log(resposta);
-      })
+     try {
+      await this.agendamentoservice.create(this.agenda).then(
+        async () => {
+          const alert = await this.alertCtrl.create({
+            message: 'Agendamento realiazado com sucesso !!',
+            buttons: [{
+              text: 'ok', handler: () => {
+                this.router.navigateByUrl('inicio');
+              },
+            },],
+          });
+          await alert.present();
+        })
     } catch (error) {
 
       let message: string;

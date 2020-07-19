@@ -14,25 +14,25 @@
   </ion-card>
   <ion-card>
     <ion-item>
-      <ion-label>Nome: </ion-label>
+      <ion-label position="floating" color="whithe">Nome: </ion-label>
       <ion-input [(ngModel)]="agenda.nome"></ion-input>
     </ion-item>
 
     <br>
 
     <ion-item>
-      <ion-label>Selecione a data: </ion-label>
-      <ion-datetime monthValues="1,2,3,4,5,6,7,8,9,10,11,12" yearValues="2020,2021" displayFormat="DD/MM/YY"
-        [(ngModel)]="agenda.data">
-      </ion-datetime>
+
+      <ion-label position="floating">Data :</ion-label>
+      <br>
+      <ion-input type="date" displayFormat="DD/MM/YYYY" [(ngModel)]="agenda.data"></ion-input>
     </ion-item>
 
     <br>
 
     <ion-item>
-      <ion-label>Selecione a hora: </ion-label>
-      <ion-datetime display-format="HH:mm" picker-format="HH:mm" [(ngModel)]="agenda.hora">
-      </ion-datetime>
+      <ion-label position="floating" color="whithe">Hora: </ion-label>
+      <br>
+      <ion-input type="time" [(ngModel)]="agenda.hora"></ion-input>
     </ion-item>
 
     <br>

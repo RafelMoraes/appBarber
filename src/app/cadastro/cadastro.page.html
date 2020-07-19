@@ -16,22 +16,30 @@
   <ion-card>
     <ion-item>
       <ion-label position="floating">Nome</ion-label>
-      <ion-input type="email" [(ngModel)]="userCadastro.nome" name="nome"></ion-input>
+      <ion-input type="text" [(ngModel)]="userCadastro.nome" name="nome" required="true"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Telefone</ion-label>
-      <ion-input type="email" [(ngModel)]="userCadastro.telefone" name="telefone"></ion-input>
+      <ion-input type="tel" [(ngModel)]="userCadastro.telefone" name="telefone" required></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">E-mail</ion-label>
-      <ion-input type="email" [(ngModel)]="userCadastro.email" name="email"></ion-input>
+      <ion-input type="email" [(ngModel)]="userCadastro.email" name="email" required></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Senha</ion-label>
-      <ion-input type="password" [(ngModel)]="userCadastro.senha" name="senha"></ion-input>
+      <ion-input type="password" [(ngModel)]="userCadastro.senha" name="senha" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Nivel: </ion-label>
+      <ion-select interface="popover" [(ngModel)]="userCadastro.admin" required>
+        <ion-select-option value="true">Admin</ion-select-option>
+        <ion-select-option value="false">Usuario</ion-select-option>
+      </ion-select>
     </ion-item>
 
     <ion-button expand="block" color="danger" type="submit" (click)="cadastro()">Salvar</ion-button>
