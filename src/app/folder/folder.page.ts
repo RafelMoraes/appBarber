@@ -39,9 +39,15 @@ export class FolderPage implements OnInit {
 
     await this.presentLoading();
 
+
+
     try {
-      await this.authService.login(this.userLogin);
-      this.router.navigate(['inicio']);
+      if (this.userLogin.email == "adm@val.com") {
+        await this.authService.login(this.userLogin);
+        this.router.navigate(['adm-agendamentos']);
+      } else {
+        await this.authService.login(this.userLogin);
+        this.router.navigate(['inicio']);
       }
     } catch (error) {
 

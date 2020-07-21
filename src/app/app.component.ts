@@ -24,11 +24,6 @@ export class AppComponent implements OnInit {
       icon: 'calendar'
     },
     {
-      title: 'Perfil',
-      url: '/perfil',
-      icon: 'person'
-    },
-    {
       title: 'Contato',
       url: '/contato',
       icon: 'call'

@@ -28,16 +28,6 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'perfil',
-    loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule),
-    canActivate: [AuthGuard]
-  },
-  {
-    path: 'edit-perfil',
-    loadChildren: () => import('./edit-perfil/edit-perfil.module').then( m => m.EditPerfilPageModule),
-    canActivate: [AuthGuard]
-  },
-  {
     path: 'adm-agendamentos',
     loadChildren: () => import('./adm-agendamentos/adm-agendamentos.module').then( m => m.AdmAgendamentosPageModule),
     canActivate: [AuthGuard]

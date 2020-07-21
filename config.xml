@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="moraes.rafael.appbarber" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Valtenis Barbearia</name>
+<widget id="moraes.rafael.appbarber" version="1.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>App Barber</name>
     <description>Agendamento.</description>
     <author email="rafamoraes5550@gmail.com" href="https://www.facebook.com/RafaelMoraes5550">Rafael Moraes, Jonatan Marcelo, Alex Roberto</author>
     <content src="index.html" />

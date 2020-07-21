@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Usuario } from '../intefaces/usuario';
-import { Admin } from '../intefaces/administrador';
 import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable({

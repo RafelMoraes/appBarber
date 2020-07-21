@@ -34,14 +34,6 @@
       <ion-input type="password" [(ngModel)]="userCadastro.senha" name="senha" required></ion-input>
     </ion-item>
 
-    <ion-item>
-      <ion-label>Nivel: </ion-label>
-      <ion-select interface="popover" [(ngModel)]="userCadastro.admin" required>
-        <ion-select-option value="true">Admin</ion-select-option>
-        <ion-select-option value="false">Usuario</ion-select-option>
-      </ion-select>
-    </ion-item>
-
     <ion-button expand="block" color="danger" type="submit" (click)="cadastro()">Salvar</ion-button>
 
   </ion-card>

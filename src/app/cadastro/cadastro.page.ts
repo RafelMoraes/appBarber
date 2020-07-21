@@ -42,11 +42,11 @@ export class CadastroPage implements OnInit {
   async cadastro() {
     await this.presentLoading();
     try {
-     const newUser = await this.authService.cadastro(this.userCadastro)
-     const newUserObject = Object.assign({}, this.userCadastro);
+      const newUser = await this.authService.cadastro(this.userCadastro)
+      const newUserObject = Object.assign({}, this.userCadastro);
 
-     delete newUserObject.senha;
-     await this.afs.collection('Usuarios').doc(newUser.user.uid).set(newUserObject).then(
+      delete newUserObject.senha;
+      await this.afs.collection('Usuarios').doc(newUser.user.uid).set(newUserObject).then(
         async () => {
           const alert = await this.alertCtrl.create({
             message: 'Cadastro realizado com sucesso !!',
@@ -73,7 +73,7 @@ export class CadastroPage implements OnInit {
           message = "E-mail inválido!!";
           break;
 
-          case 'auth/argument-error':
+        case 'auth/argument-error':
           message = "Preencha todos os campos!!";
           break;
       }
@@ -83,7 +83,7 @@ export class CadastroPage implements OnInit {
       this.loading.dismiss();
     }
   }
-  
+
 
   async presentLoading() {
     this.loading = await this.loadingCtrl.create({
